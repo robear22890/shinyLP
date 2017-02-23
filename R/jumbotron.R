@@ -10,7 +10,7 @@
 #' @seealso \href{http://getbootstrap.com/components/#jumbotron}{Jumbotron}
 #' @examples  jumbotron("Hi Shiny!", "text to show", buttonLabel = "Click Me")
 #' @export
-jumbotron <- function(header , content, button = TRUE,  ...){
+jumbotron <- function(header , content, button = TRUE, id ='tabBut', ...){
 
   button_label = c(...)
 
@@ -18,7 +18,7 @@ jumbotron <- function(header , content, button = TRUE,  ...){
     HTML(paste0("<div class='jumbotron'>
                 <h1> ", header, "</h1>
                 <p>", content ,"</p>",
-                "<p><a class='btn btn-primary btn-lg' button id='tabBut'>", button_label, "</a></p>
+                sprintf("<p><a class='btn btn-primary btn-lg' button id='%s'>", id), button_label, "</a></p>
                 </div>") )
 
   } else {

@@ -8,8 +8,16 @@
 
 library(shiny)
 library(shinyBS)
-library(shinyLP)
+library(devtools)
 library(shinythemes)
+
+writeLines('\n\n\nUpdating shinyLP...\n\n\n')
+x <- system('git pull', intern=TRUE)
+print(x)
+install_github('robear22890/shinyLP')
+library(shinyLP)
+
+
 
 # Define UI for application
 shinyUI(
